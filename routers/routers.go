@@ -10,7 +10,9 @@ import (
 func ImageCompress(image fiber.Router) {
 
 	image.Get("/robots.txt", func(c *fiber.Ctx) error {
-		return c.SendFile("./robots.txt")
+		robotsTxtContent := "User-agent: *\nDisallow: /"
+		c.Set("Content-Type", "text/plain")
+		return c.SendString(robotsTxtContent)
 	})
 	// image.Static("/robots.txt", "../robots.txt")
 

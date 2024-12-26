@@ -9,7 +9,11 @@ func server(serverConfig ServerConfig) {
 	app := fiber.New()
 
 	// Servir el archivo robots.txt
-	app.Static("/robots.txt", "./robots.txt")
+	app.Get("/robots.txt", func(c *fiber.Ctx) error {
+		robotsTxtContent := "User-agent: *\nDisallow: /"
+		c.Set("Content-Type", "text/plain")
+		return c.SendString(robotsTxtContent)
+	})
 
 	// routes
 	router := app.Group(serverConfig.ENDPOINT_EXPONE) // <- /api/v1/image-convert
