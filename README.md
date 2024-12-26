@@ -205,13 +205,13 @@ El proceso de conversión de la imagen guarda la imagen en `frontend/public/conv
     
     ```json
     {
-      "project_id": "PROJECT_ID_APPWRITE", // REQUIRED
-      "filename": "FILE_NAME", // REQUIRED, NOMBRE PROPORCIONADO POR EL PASO 1, EJ: bestmenu.webp
-      "bucket": "BUCKET_ID", // REQUIRED
-      "dir": "convert", // REQUIRED, convert o compress segun el caso
-      "endpoint": "ENDPOINT_APPWRITE", // OPCIONAL
-      "api_secret": "API_SECRET", // OPCIONAL
-      "id": "FILE_ID" // OPCIONAL
+      "project_id": "PROJECT_ID_APPWRITE",
+      "filename": "FILE_NAME",
+      "bucket": "BUCKET_ID",
+      "dir": "convert",
+      "endpoint": "ENDPOINT_APPWRITE", 
+      "api_secret": "API_SECRET",
+      "id": "FILE_ID"
     }
     ```
     
@@ -248,13 +248,13 @@ El proceso de conversión de la imagen guarda la imagen en `frontend/public/conv
     
     ```json
     {
-      "project_id": "PROJECT_ID_APPWRITE", // REQUIRED
-      "filename": "FILE_NAME", // REQUIRED, NOMBRE PROPORCIONADO POR EL PASO 1, EJ: bestmenu.webp
-      "bucket": "BUCKET_ID", // REQUIRED
-      "dir": "convert", // REQUIRED, convert o compress segun el caso
-      "endpoint": "ENDPOINT_APPWRITE", // OPCIONAL
-      "api_secret": "API_SECRET", // OPCIONAL
-      "id": "FILE_ID", // OPCIONAL
+      "project_id": "PROJECT_ID_APPWRITE",
+      "filename": "FILE_NAME",
+      "bucket": "BUCKET_ID",
+      "dir": "convert",
+      "endpoint": "ENDPOINT_APPWRITE",
+      "api_secret": "API_SECRET", 
+      "id": "FILE_ID",
       "image": "path/bestmenu.png",
       "quality": 75,
       "from": "image/png",
