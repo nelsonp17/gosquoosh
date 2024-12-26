@@ -74,6 +74,60 @@ Renombrar el archivo `main/main.go.example` a `main/main.go` y configurar según
 go run main/main.go
 ```
 
+### Iniciar el servidor
+```go
+package main
+
+import "github.com/nelsonp17/gosquoosh"
+
+func main() {
+	gosquoosh.ImageConvert(
+		gosquoosh.ImageConvertConfig{
+			//API_KEY: "api_key",
+			Dir: gosquoosh.Dir{
+				INPUT_PATH:  "./public/input",
+				OUTPUT_PATH: "./public/output",
+			},
+			AppWrite: gosquoosh.AppWrite{
+				ENDPOINT:   "",
+				API_SECRET: "",
+			},
+			Server: gosquoosh.ServerConfig{
+				PORT:            "5858",
+				HOST:            "localhost",
+				ENDPOINT_EXPONE: "/api/v1/image",
+			},
+		},
+	)
+}
+```
+
+### Usar con tu propio servidor
+
+Si ya tiene un servidor fiber simplement ejecute
+
+```go
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/nelsonp17/gosquoosh/routers"
+)
+
+func main() {
+	app := fiber.New()
+
+	router := app.Group("/api/v1/image")
+	routers.Init(router) // <- Inicia el microservicio en la ruta que le indiquemos
+
+	// start server
+	err := app.Listen(":3000")
+	if err != nil {
+		return
+	}
+}
+
+
+```
+
 
 ### POST /convert
 
