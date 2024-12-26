@@ -1,0 +1,7 @@
+*.exe
+main
+*.env
+/.idea
+/tmp
+main.go
+public

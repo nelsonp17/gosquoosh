@@ -1,0 +1,22 @@
+package main
+
+func main() {
+	ImageConvert(
+		ImageConvertConfig{
+			//API_KEY: "api_key",
+			Dir: Dir{
+				INPUT_PATH:  "input_path",
+				OUTPUT_PATH: "output_path",
+			},
+			AppWrite: AppWrite{
+				ENDPOINT:   "endpoint",
+				API_SECRET: "api_secret",
+			},
+			Server: ServerConfig{
+				// PORT:            "port",
+				// HOST:            "host",
+				// ENDPOINT_EXPONE: "endpoint_expone",
+			},
+		},
+	)
+}
