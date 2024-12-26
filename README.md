@@ -69,9 +69,9 @@ go get github.com/nelsonp17/gosquoosh
 
 ## Ejecución
 
-Renombrar el archivo `main.go.example` a `main.go` y configurar según sus necesidades
+Renombrar el archivo `main/main.go.example` a `main/main.go` y configurar según sus necesidades
 ```bash
-go run github.com/nelsonp17/gosquoosh
+go run main/main.go
 ```
 
 

@@ -1,4 +1,4 @@
-package main
+package gosquoosh
 
 import (
 	"github.com/nelsonp17/gosquoosh/appwrite"

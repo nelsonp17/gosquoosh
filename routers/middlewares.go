@@ -14,3 +14,9 @@ func APIKeyAuth(c *fiber.Ctx) error {
 	}
 	return c.Next()
 }
+
+// Middleware para añadir X-Robots-Tag: noindex
+func NoIndexMiddleware(c *fiber.Ctx) error {
+	c.Set("X-Robots-Tag", "noindex")
+	return c.Next()
+}

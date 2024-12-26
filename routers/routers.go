@@ -8,11 +8,17 @@ import (
 
 // ImageCompress microservice de compresión de imágenes y conversión de formatos, estas rutas estan protegidas por un API Key
 func ImageCompress(image fiber.Router) {
-	compress := image.Group("/compress", APIKeyAuth)  // <- /api/v1/image/compress
-	convert := image.Group("/convert", APIKeyAuth)    // <- /api/v1/image/convert
-	cache := image.Group("/cache", APIKeyAuth)        // <- /api/v1/image/cache
-	upload := image.Group("/upload", APIKeyAuth)      // <- /api/v1/image/upload
-	appwrite := upload.Group("/appwrite", APIKeyAuth) // <- /api/v1/image/upload/appwrite
+
+	image.Get("/robots.txt", func(c *fiber.Ctx) error {
+		return c.SendFile("./robots.txt")
+	})
+	// image.Static("/robots.txt", "../robots.txt")
+
+	compress := image.Group("/compress", APIKeyAuth, NoIndexMiddleware)  // <- /api/v1/image/compress
+	convert := image.Group("/convert", APIKeyAuth, NoIndexMiddleware)    // <- /api/v1/image/convert
+	cache := image.Group("/cache", APIKeyAuth, NoIndexMiddleware)        // <- /api/v1/image/cache
+	upload := image.Group("/upload", APIKeyAuth, NoIndexMiddleware)      // <- /api/v1/image/upload
+	appwrite := upload.Group("/appwrite", APIKeyAuth, NoIndexMiddleware) // <- /api/v1/image/upload/appwrite
 
 	cache.Add(http.MethodPost, "/clear", ClearCacheWebp)
 

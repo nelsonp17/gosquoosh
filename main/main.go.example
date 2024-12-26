@@ -1,0 +1,23 @@
+package main
+
+import "github.com/nelsonp17/gosquoosh"
+
+func main() {
+	gosquoosh.ImageConvert(
+		gosquoosh.ImageConvertConfig{
+			//API_KEY: "api_key",
+			Dir: gosquoosh.Dir{
+				//INPUT_PATH:  "input_path",
+				//OUTPUT_PATH: "output_path",
+			},
+			AppWrite: gosquoosh.AppWrite{
+				ENDPOINT:   "endpoint",
+				API_SECRET: "api_secret",
+			},
+			Server: gosquoosh.ServerConfig{
+				//PORT:            "5858",
+				//HOST:            "localhost",
+				//ENDPOINT_EXPONE: "/api/v1/image",
+			},
+		},
+	)
