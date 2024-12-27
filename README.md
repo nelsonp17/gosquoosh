@@ -12,7 +12,7 @@ Convertir imágenes a diferentes formatos a webp, jpg o png y subir a appwrite
 
 ### Windows
 
-Instale msys2 e instale el gcc puede seguir esta guía [https://sajidifti.medium.com/how-to-install-gcc-and-gdb-on-windows-using-msys2-tutorial-0fceb7e66454]tutorial-gcc. Actualice su msys2
+Instale msys2 e instale el gcc puede seguir esta guía [tutorial-gcc](https://sajidifti.medium.com/how-to-install-gcc-and-gdb-on-windows-using-msys2-tutorial-0fceb7e66454). Actualice su msys2
 
 ```bash
 pacman -Syu
